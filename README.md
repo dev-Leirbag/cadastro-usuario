@@ -20,7 +20,6 @@ API de **cadastro e autenticação de usuários** (login) — microserviço resp
 1. O usuário realiza **login** (endpoint de autenticação) enviando credenciais (email + senha).
 2. A API valida as credenciais e retorna um **token JWT** (corpo da resposta JSON contendo o token).
 3. Para usar os endpoints protegidos, **no Insomnia** você deve abrir a aba **Auth** da requisição e **colocar o token com o prefixo `Bearer`** (por exemplo: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6...`).  
-   - Você informou que não passa o token manualmente no header `Authorization`, mas sim diretamente na aba **Auth** do Insomnia com o prefixo `Bearer` — essa é a forma recomendada para testar no Insomnia conforme seu fluxo.
 
 > Nota técnica: internamente a aplicação valida o JWT em cada requisição protegida e resolve o usuário autenticado a partir das claims do token.
 
