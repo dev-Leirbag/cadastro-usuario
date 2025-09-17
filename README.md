@@ -27,10 +27,8 @@ API de **cadastro e autenticação de usuários** (login) — microserviço resp
 
 ## Endpoints principais (exemplos)
 
-> **OBS:** nomes comuns dos endpoints — confira o código do seu repositório se algo estiver diferente (ex.: `/usuarios`, `/login`).
-
 ### Cadastro de usuário
-- **POST** `/usuarios`  
+- **POST** `/cadastro`  
   **Request example (JSON):**
   ```json
   {
@@ -67,7 +65,7 @@ API de **cadastro e autenticação de usuários** (login) — microserviço resp
   ```
 
 ### Recursos protegidos (ex. listar usuários)
-- **GET** `/usuarios` — exige token JWT (via Auth no Insomnia com `Bearer ...`).
+- **GET** `/usuario` — exige token JWT (via Auth no Insomnia com `Bearer ...`).
 
 ---
 
@@ -88,7 +86,7 @@ Este serviço de usuário **integra-se** com o repositório de produtos para per
    cd cadastro-usuario
    ```
 
-2. (Opcional) edite variáveis de ambiente no `docker-compose.yml` ou no `application.yml/properties` se necessário — por exemplo, credenciais do banco, chave JWT, etc. (os arquivos de configuração estão no repositório). citeturn0view0turn3view1
+2. (Opcional) edite variáveis de ambiente no `docker-compose.yml` ou no `application.yml/properties` se necessário — por exemplo, credenciais do banco, chave JWT, etc. (os arquivos de configuração estão no repositório).
 
 3. Construa a imagem e suba os containers:
    ```bash
