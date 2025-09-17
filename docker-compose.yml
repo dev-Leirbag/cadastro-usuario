@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "9090:9090"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db_cad_funcionario
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: SatoroGojo
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: db_cad_funcionario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: SatoroGojo
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d db_cad_funcionario"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
