@@ -7,10 +7,11 @@ API de **cadastro e autenticação de usuários** (login) — microserviço resp
 ## Tecnologias principais
 
 - Java (Spring Boot)
+- Spring Boot
 - Spring Security (autenticação)
 - JWT (JSON Web Token) para emissão/validação de token
 - Spring Data JPA (persistência)
-- Banco configurado via `application.properties` / `application.yml` (ver `src/main/resources` no repositório)
+- Banco Relacional - PostgreSQL
 - Docker / Docker Compose para containerização
 
 ---
